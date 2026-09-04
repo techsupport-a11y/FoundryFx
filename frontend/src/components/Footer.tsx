@@ -90,7 +90,7 @@ export default function Footer() {
 
         {/* Giant outlined wordmark */}
         <div className="pointer-events-none mt-16 select-none overflow-hidden" aria-hidden="true">
-          <p className="outline-word font-display text-center text-[18vw] leading-[0.85] tracking-tight lg:text-[15rem]">
+          <p className="text-outline-light font-display text-center text-[18vw] !font-normal !tracking-normal leading-none lg:text-[15rem]">
             FOUNDRY
           </p>
         </div>

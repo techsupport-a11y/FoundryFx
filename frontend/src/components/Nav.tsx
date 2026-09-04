@@ -21,13 +21,13 @@ export default function Nav() {
   return (
     <motion.header
       data-testid="site-nav"
-      initial={{ y: -64, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.7, delay: 1.7, ease: [0.22, 1, 0.36, 1] }}
-      className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-500 ${
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter,padding] duration-500 ${
         scrolled
-          ? "border-b border-white/10 bg-navy-950/85 backdrop-blur-md"
-          : "border-b border-transparent bg-transparent"
+          ? "border-b border-white/10 bg-navy-950/90 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.5)] backdrop-blur-md"
+          : "border-b border-white/[0.06] bg-gradient-to-b from-navy-950/60 to-navy-950/0"
       }`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-8">
