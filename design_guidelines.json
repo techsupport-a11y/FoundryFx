@@ -1,0 +1,91 @@
+{
+  "project_info": {
+    "name": "Foundry FX Structured Product Trade Builder Platform",
+    "tagline": "Build. Refine. Execute.",
+    "company": "SwitchYard Capital",
+    "domain": "foundryfx.org",
+    "external_portal_url": "https://foundryfx.org/syfx/portal/",
+    "app_type": "marketing_site"
+  },
+  "color_palette": {
+    "primary_deep_navy": "#111844",
+    "secondary_mid_indigo": "#4B5694",
+    "tertiary_slate_blue": "#7288AE",
+    "black": "#000000",
+    "white": "#FFFFFF",
+    "dark_gradient": "bg-gradient-to-br from-[#111844] via-[#1A235A] to-[#4B5694]",
+    "section_alternation": "Alternate between Dark Sections (#111844 -> #4B5694) and Light/White Sections (#FFFFFF / #F8FAFC) down pages"
+  },
+  "typography": {
+    "display_font": "Fraunces, serif",
+    "body_font": "Inter, sans-serif",
+    "eyebrow": "uppercase tracking-[0.25em] text-xs font-semibold text-[#7288AE]",
+    "headline_large": "font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.08] tracking-tight font-light text-white font-['Fraunces']",
+    "headline_medium": "font-serif text-2xl sm:text-3xl lg:text-4xl leading-tight font-light font-['Fraunces']",
+    "body_style": "font-sans text-sm sm:text-base leading-relaxed text-[#7288AE]"
+  },
+  "brand_motif": {
+    "symbol": "Hexagon-with-cube 3D geometric isometric glyph",
+    "usage": "Navbar logo, section dividers, background low-opacity watermark, card corner badges, favicon, audit trail block nodes"
+  },
+  "layout_and_spacing": {
+    "container": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "section_padding": "py-16 sm:py-24 lg:py-32",
+    "bento_grid": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8",
+    "card_padding": "p-6 sm:p-8"
+  },
+  "pages_architecture": {
+    "Home": [
+      "Navigation header with Hexagon logo + FOUNDRY + 'FX Structure Platform' subtitle, links to About/Services/Contact, ghost Login button top right",
+      "Hero section: INTRODUCING eyebrow, serif FOUNDRY, 'Build. Refine. Execute.' tagline, CTAs 'Explore Foundry' + 'Watch Video' modal, floating tilted AUD/USD collar trade-builder mockup with scenario chart & provider comparison",
+      "How-it-works 3-step strip: Structure -> Price -> Execute with connecting line & step badges",
+      "'Everything you need to build better trades' two-column feature breakdown + live interactive structure builder preview mockup",
+      "Product Catalogue grid: Forward, Collar, Seagull, Knock-In/Out Barrier, TARF structure cards with line-chart glyphs + '+65 more structures' tile",
+      "Dark stats strip with animated count-up numbers ($140B+ Notional Priced, 42ms Average Execution, 18 Top-Tier Dealers, 99.99% Uptime)",
+      "Enterprise trust strip: Global Reach, Real-Time Data, Intelligent Insights, Security First, Built for Teams",
+      "Final dark CTA with globe/network illustration and 'Get Started with Foundry' action"
+    ],
+    "About": [
+      "Company story by SwitchYard Capital, mission in large serif typography",
+      "Institutional leadership team & values grid with professional headshots",
+      "Cryptographic hash-chained audit trail section with interactive chain-of-blocks hexagon diagram"
+    ],
+    "Services": [
+      "Three pillars full-width alternating sections: Deal Structuring, Live Pricing & Risk, Execution & Audit Trail",
+      "Each pillar features bespoke mockup frame + capability bullets + interactive pricing/scenario toggle"
+    ],
+    "Contact": [
+      "Split layout: Contact form left with animated floating labels, institutional contact details & desk hours right",
+      "Dark background with network particle mesh texture",
+      "Form submission UI-state success banner with confirmation ticket"
+    ]
+  },
+  "image_urls": {
+    "trading_chart_dark": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHwyfHxpbnN0aXR1dGlvbmFsJTIwZmluYW5jaWFsJTIwdHJhZGluZyUyMGRlc2slMjBjdXJyZW5jeSUyMGdyYXBoJTIwRlglMjBtYXJrZXR8ZW58MHx8fHwxNzg4NTQ1OTIwfDA&ixlib=rb-4.1.0&q=85",
+    "trading_app_ui": "https://images.unsplash.com/photo-1651341050677-24dba59ce0fd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHw0fHxpbnN0aXR1dGlvbmFsJTIwZmluYW5jaWFsJTIwdHJhZGluZyUyMGRlc2slMjBjdXJyZW5jeSUyMGdyYXBoJTIwRlglMjBtYXJrZXR8ZW58MHx8fHwxNzg4NTQ1OTIwfDA&ixlib=rb-4.1.0&q=85",
+    "desk_charts": "https://images.unsplash.com/photo-1707761918029-1295034aa31e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHwzfHxpbnN0aXR1dGlvbmFsJTIwZmluYW5jaWFsJTIwdHJhZGluZyUyMGRlc2slMjBjdXJyZW5jeSUyMGdyYXBoJTIwRlglMjBtYXJrZXR8ZW58MHx8fHwxNzg4NTQ1OTIwfDA&ixlib=rb-4.1.0&q=85",
+    "crypto_graph": "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHwxfHxpbnN0aXR1dGlvbmFsJTIwZmluYW5jaWFsJTIwdHJhZGluZyUyMGRlc2slMjBjdXJyZW5jeSUyMGdyYXBoJTIwRlglMjBtYXJrZXR8ZW58MHx8fHwxNzg4NTQ1OTIwfDA&ixlib=rb-4.1.0&q=85",
+    "skyscraper_curved": "https://images.unsplash.com/photo-1767978175944-a2e7045bbfea?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njl8MHwxfHNlYXJjaHw0fHxmaW5hbmNpYWwlMjB0cmFkZXIlMjBkZXNrJTIwY29ycG9yYXRlJTIwYnVpbGRpbmclMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzg4NTQ1OTIwfDA&ixlib=rb-4.1.0&q=85",
+    "highrise_interior": "https://images.unsplash.com/photo-1519748174344-16e5d53bda7a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njl8MHwxfHNlYXJjaHwxfHxmaW5hbmNpYWwlMjB0cmFkZXIlMjBkZXNrJTIwY29ycG9yYXRlJTIwYnVpbGRpbmclMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzg4NTQ1OTIwfDA&ixlib=rb-4.1.0&q=85",
+    "glass_skyscraper": "https://images.unsplash.com/photo-1776671069144-4a4a8ce335f5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njl8MHwxfHNlYXJjaHwyfHxmaW5hbmNpYWwlMjB0cmFkZXIlMjBkZXNrJTIwY29ycG9yYXRlJTIwYnVpbGRpbmclMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzg4NTQ1OTIwfDA&ixlib=rb-4.1.0&q=85"
+  },
+  "interactive_components_and_motion": {
+    "library": "Framer Motion (framer-motion)",
+    "nav": "Sticky glassmorphic navbar (#111844 / 80% opacity + backdrop-blur-md), transitions to border glow on scroll",
+    "scroll_reveals": "Staggered fade-up entrances with 60-100ms delays",
+    "card_hover": "Lift on hover (-translate-y-1.5) with border-color transition to #7288AE and subtle glowing shadow",
+    "trade_builder_widget": "Interactive scenario calculator toggle (AUD/USD Collar, EUR/USD Seagull, GBP/USD TARF) with dynamic payout payoff curve SVG",
+    "modals": "Video demo modal player & structure quote request modal"
+  },
+  "testing_guidelines": {
+    "required_attribute": "data-testid",
+    "naming_convention": "kebab-case description, e.g. data-testid='nav-login-button', data-testid='hero-explore-button', data-testid='structure-card-collar', data-testid='contact-form-submit'"
+  },
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Strictly adhere to the designated color palette (#111844, #4B5694, #7288AE, #000000, #FFFFFF).",
+    "Use Fraunces serif for all major headlines and display elements, and Inter for body/UI text.",
+    "Include data-testid attributes on all interactive elements, buttons, inputs, links, and key content cards.",
+    "Ensure the ghost Login button links directly to https://foundryfx.org/syfx/portal/",
+    "Maintain responsive mobile behavior with a clean slide-over mobile drawer containing the Hexagon mark."
+  ]
+}
