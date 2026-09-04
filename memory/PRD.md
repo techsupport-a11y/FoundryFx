@@ -29,9 +29,12 @@ Premium marketing website for Foundry (foundryfx.org), an FX structured product 
 - Contact: "Talk to the team." dark page, underline-style form in glass card, "Transmit message" → success state with mono ref; right rail: desk@foundryfx.org, client portal card, regions list
 - Footer: white, link columns (Platform/Company/Access), giant outlined FOUNDRY wordmark, mono legal bar
 
+- About: denser image-led layout (FX chart + trading desk photography, brand-tinted, alternating rails); Home and Services tightened to match, with full-bleed parallax desk bands before the CTA
+- Watch Video modal plays real stand-in market footage (Pexels HD, captioned for swap)
+- Lenis smooth inertial scrolling site-wide; footer wordmark = Fraunces light outline matching reference
+
 ## Backlog / next tasks
-- P0: Swap placeholder mockups/visuals (data-placeholder tagged) for real product screenshots
-- P1: Wire Watch Video modal to real product film embed
+- P0: Swap remaining tagged stand-ins (product screenshots, desk photography, product film) for real Foundry assets
 - P1: Point domain foundryfx.org at deployment; confirm Login URL routing to /syfx/portal/
 - P2: Optional backend endpoint to persist contact enquiries + email notification (Resend)
 - P2: Full 71-structure catalogue page if desired

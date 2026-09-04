@@ -104,7 +104,7 @@ export default function About() {
           </Reveal>
           <Reveal delay={0.2}>
             <BrandImage
-              src="https://images.unsplash.com/photo-1642790106117-e829e14a795f?auto=format&fit=crop&w=1200&q=80"
+              src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1200&q=80"
               alt="FX market data on trading screens"
               placeholder="photo: fx-trading-screens"
               caption="FX market data — live desk screens"
@@ -122,7 +122,7 @@ export default function About() {
           </Reveal>
           <Reveal delay={0.15}>
             <BrandImage
-              src="https://images.unsplash.com/photo-1651341050677-24dba59ce0fd?auto=format&fit=crop&w=1200&q=80"
+              src="https://images.unsplash.com/photo-1707761918029-1295034aa31e?auto=format&fit=crop&w=1200&q=80"
               alt="Trading application interface on screen"
               placeholder="photo: workbench-ui"
               caption="Workbench — swap for product photography"

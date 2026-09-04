@@ -81,7 +81,7 @@ export default function Services() {
         <section
           key={p.id}
           data-testid={`pillar-${p.id}`}
-          className={`bg-white py-24 lg:py-32 ${i > 0 ? "border-t border-slateblue-100" : ""}`}
+          className={`bg-white py-16 lg:py-24 ${i > 0 ? "border-t border-slateblue-100" : ""}`}
         >
           <div
             className={`mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-2 lg:px-8 ${
@@ -114,6 +114,28 @@ export default function Services() {
           </div>
         </section>
       ))}
+
+      {/* ============ DESK BAND ============ */}
+      <section data-testid="services-desk-band" className="bg-white pb-16 lg:pb-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <Reveal>
+            {/* PLACEHOLDER: desk photography — swap for real Foundry desk shots */}
+            <div data-placeholder="photo: pricing-desk" className="group relative aspect-[21/9] overflow-hidden rounded-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1651341050677-24dba59ce0fd?auto=format&fit=crop&w=2000&q=80"
+                alt="Live market charts on a pricing desk"
+                loading="lazy"
+                className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+              />
+              <div className="absolute inset-0 bg-navy-900/40 mix-blend-multiply" />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-950/60 via-transparent to-transparent" />
+              <p className="absolute bottom-5 left-6 font-mono text-[9px] uppercase tracking-[0.28em] text-slateblue-200">
+                Live pricing — provider by provider
+              </p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
 
       <FinalCta />
     </>

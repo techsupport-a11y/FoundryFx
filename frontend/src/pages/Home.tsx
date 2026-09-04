@@ -6,7 +6,7 @@ import {
   ShieldCheck, Cloud, Workflow, Gauge, CheckCircle2,
   Globe, Radio, TrendingUp, Users,
 } from "lucide-react";
-import { Reveal, RevealLine, CountUp } from "@/components/motion";
+import { Reveal, RevealLine, CountUp, ParallaxLayer } from "@/components/motion";
 import { MeshCanvas } from "@/components/MeshCanvas";
 import { CandleArt } from "@/components/CandleArt";
 import { HexMark } from "@/components/HexMark";
@@ -155,7 +155,7 @@ export default function Home() {
       <Ticker />
 
       {/* ============ HOW IT WORKS ============ */}
-      <section data-testid="how-it-works" className="bg-white py-24 lg:py-32">
+      <section data-testid="how-it-works" className="bg-white py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <Reveal>
             <p className="eyebrow text-slateblue-500">How it works</p>
@@ -190,7 +190,7 @@ export default function Home() {
       </section>
 
       {/* ============ FEATURES ============ */}
-      <section data-testid="features-section" className="border-t border-slateblue-100 bg-white py-24 lg:py-32">
+      <section data-testid="features-section" className="border-t border-slateblue-100 bg-white py-16 lg:py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <Reveal>
@@ -224,7 +224,7 @@ export default function Home() {
       </section>
 
       {/* ============ CATALOGUE ============ */}
-      <section data-testid="catalogue-section" className="border-t border-slateblue-100 bg-white py-24 lg:py-32">
+      <section data-testid="catalogue-section" className="border-t border-slateblue-100 bg-white py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
@@ -287,7 +287,7 @@ export default function Home() {
       <section data-testid="stats-strip" className="bg-strip-dark relative overflow-hidden">
         <div className="noise" />
         <HexMark className="pointer-events-none absolute -right-8 top-1/2 h-72 w-72 -translate-y-1/2 text-white/5" strokeWidth={1} />
-        <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-2 gap-x-6 gap-y-12 px-6 py-24 lg:grid-cols-4 lg:px-8">
+        <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-2 gap-x-6 gap-y-12 px-6 py-16 lg:grid-cols-4 lg:px-8 lg:py-20">
           {STATS.map((s, i) => (
             <Reveal key={s.label} delay={0.08 * i}>
               <div data-testid={s.testId} className="border-l border-white/15 pl-6">
@@ -305,7 +305,7 @@ export default function Home() {
 
       {/* ============ TRUST ============ */}
       <section data-testid="trust-strip" className="relative bg-white">
-        <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-28">
+        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
           <Reveal>
             <p className="eyebrow text-slateblue-500">Enterprise</p>
           </Reveal>
@@ -328,6 +328,29 @@ export default function Home() {
                 </div>
               ))}
             </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ============ DESK BAND ============ */}
+      <section data-testid="desk-band" className="relative h-[340px] overflow-hidden lg:h-[420px]">
+        <ParallaxLayer className="absolute -inset-y-16 inset-x-0" distance={50}>
+          <img
+            src="https://images.unsplash.com/photo-1707761918029-1295034aa31e?auto=format&fit=crop&w=2000&q=80"
+            alt="Trading desk with live market charts"
+            loading="lazy"
+            className="h-full w-full object-cover"
+          />
+        </ParallaxLayer>
+        <div className="absolute inset-0 bg-navy-950/55" />
+        <div className="noise" />
+        {/* PLACEHOLDER: desk photography — swap for real Foundry desk shots */}
+        <div data-placeholder="photo: desk-in-action" className="relative z-10 mx-auto flex h-full max-w-7xl flex-col items-start justify-center px-6 lg:px-8">
+          <Reveal>
+            <p className="eyebrow text-slateblue-300">In the wild</p>
+            <p className="font-display mt-4 max-w-lg text-3xl leading-snug tracking-tight text-white sm:text-4xl">
+              The desk's whole day, on one screen.
+            </p>
           </Reveal>
         </div>
       </section>
@@ -362,20 +385,26 @@ export default function Home() {
               >
                 <X className="h-5 w-5" />
               </button>
-              {/* PLACEHOLDER: product walkthrough video embed */}
+              {/* PLACEHOLDER: stand-in market footage — swap src for the Foundry product film */}
               <div
                 data-placeholder="video: foundry-product-walkthrough"
-                className="grain bg-hero-dark relative flex aspect-video items-center justify-center overflow-hidden rounded-2xl border border-white/15"
+                className="relative aspect-video overflow-hidden rounded-2xl border border-white/15 bg-navy-950"
               >
-                <div className="text-center">
-                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-white/40 text-white">
-                    <Play className="h-6 w-6 fill-current" />
-                  </div>
-                  <p className="mt-5 font-mono text-[10px] uppercase tracking-[0.3em] text-slateblue-400">
-                    Product film — coming soon
-                  </p>
-                </div>
+                <video
+                  data-testid="video-player"
+                  className="h-full w-full object-cover"
+                  src="https://videos.pexels.com/video-files/8480232/8480232-hd_1280_720_25fps.mp4"
+                  poster="https://images.pexels.com/videos/8480232/pexels-photo-8480232.jpeg?auto=compress&cs=tinysrgb&w=1280"
+                  controls
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
               </div>
+              <p className="mt-3 text-center font-mono text-[9px] uppercase tracking-[0.28em] text-slateblue-500">
+                Stand-in footage — swap for the Foundry product film
+              </p>
             </motion.div>
           </motion.div>
         )}
