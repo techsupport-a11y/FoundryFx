@@ -26,8 +26,8 @@ export default function Nav() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter,padding] duration-500 ${
         scrolled
-          ? "border-b border-white/10 bg-navy-950/90 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.5)] backdrop-blur-md"
-          : "border-b border-white/[0.06] bg-gradient-to-b from-navy-950/60 to-navy-950/0"
+          ? "border-b border-slateblue-500/30 bg-navy-950 shadow-[0_10px_40px_-12px_rgba(0,0,0,0.65)]"
+          : "border-b border-white/10 bg-gradient-to-b from-navy-950/80 via-navy-950/40 to-navy-950/0"
       }`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-8">
@@ -51,20 +51,20 @@ export default function Nav() {
               data-testid={`nav-link-${l.label.toLowerCase()}`}
               className={({ isActive }) =>
                 `text-[11px] font-medium uppercase tracking-[0.3em] transition-colors duration-300 ${
-                  isActive ? "text-white" : "text-slateblue-400 hover:text-white"
+                  isActive ? "text-white" : "text-slateblue-300 hover:text-white"
                 }`
               }
             >
               {l.label}
             </NavLink>
           ))}
-          <a
-            href={PORTAL_URL}
+          <Link
+            to="/login"
             data-testid="nav-login-button"
-            className="rounded-full border border-white/25 px-5 py-2 text-[11px] font-medium uppercase tracking-[0.25em] text-white transition-all duration-300 hover:border-white/60 hover:bg-white/5"
+            className="rounded-full border border-white/30 px-5 py-2 text-[11px] font-medium uppercase tracking-[0.25em] text-white transition-all duration-300 hover:border-white/70 hover:bg-white/10"
           >
             Login
-          </a>
+          </Link>
         </nav>
 
         <button
@@ -107,14 +107,15 @@ export default function Nav() {
                   </NavLink>
                 </motion.div>
               ))}
-              <a
-                href={PORTAL_URL}
+              <Link
+                to="/login"
+                onClick={() => setOpen(false)}
                 data-testid="nav-mobile-login-button"
-                className="mt-4 flex items-center justify-center gap-2 rounded-full border border-white/25 py-3 text-sm font-medium uppercase tracking-[0.24em] text-white"
+                className="mt-4 flex items-center justify-center gap-2 rounded-full border border-white/30 py-3 text-sm font-medium uppercase tracking-[0.24em] text-white"
               >
                 Login
                 <HexMark className="h-4 w-4" strokeWidth={2} />
-              </a>
+              </Link>
             </div>
           </motion.nav>
         )}

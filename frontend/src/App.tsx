@@ -9,6 +9,7 @@ import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Services from "@/pages/Services";
 import Contact from "@/pages/Contact";
+import Login from "@/pages/Login";
 
 let lenisInstance: Lenis | null = null;
 
@@ -23,6 +24,8 @@ function ScrollToTop() {
 
 export default function App() {
   const [loading, setLoading] = useState(true);
+  const { pathname } = useLocation();
+  const bare = pathname === "/login";
 
   useEffect(() => {
     const lenis = new Lenis({ lerp: 0.09 });
@@ -51,16 +54,17 @@ export default function App() {
     <div className="min-h-screen bg-white font-sans text-navy-900 antialiased">
       <AnimatePresence>{loading ? <Preloader key="preloader" /> : null}</AnimatePresence>
       <ScrollToTop />
-      <Nav />
+      {bare ? null : <Nav />}
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </main>
-      <Footer />
+      {bare ? null : <Footer />}
     </div>
   );
 }
