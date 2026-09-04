@@ -3,6 +3,7 @@
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/inter";
 @import "@fontsource-variable/fraunces";
+@import "@fontsource-variable/jetbrains-mono";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -22,7 +23,8 @@
     --color-slateblue-100: #E6ECF4;
     --color-mist-50: #F5F7FB;
     --font-serif: "Fraunces Variable", Georgia, serif;
-    --font-sans: "Inter Variable", system-ui, sans-serif;
+    --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+    --font-mono: "JetBrains Mono Variable", ui-monospace, SFMono-Regular, monospace;
 }
 
 @theme inline {
@@ -154,22 +156,48 @@
 }
 
 @layer utilities {
-  /* Foundry display type */
+  /* Fraunces display — editorial serif, tight tracking, soft optical size */
   .font-display {
     font-family: "Fraunces Variable", Georgia, serif;
     font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 0;
+    font-weight: 430;
+    letter-spacing: -0.02em;
   }
+  /* Eyebrow label — 11px, tracked wide */
   .eyebrow {
-    @apply text-xs font-semibold uppercase tracking-[0.28em];
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
   }
-  /* Dark section gradient — brand navy sweep */
-  .bg-foundry-dark {
-    background: linear-gradient(155deg, #070B24 0%, #111844 42%, #1A235A 72%, #4B5694 130%);
+  /* Mock data caption inside product frames */
+  .mock-caption {
+    font-family: "JetBrains Mono Variable", ui-monospace, monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #7288AE;
   }
-  .bg-foundry-dark-soft {
-    background: linear-gradient(170deg, #111844 0%, #1A235A 60%, #26316F 115%);
+  /* Dark hero gradient — radial, lighter top-right */
+  .bg-hero-dark {
+    background: radial-gradient(120% 90% at 80% 0%, #26316F 0%, #111844 55%, #070B24 100%);
   }
-  /* Film-grain overlay for image / gradient placeholder blocks */
+  .bg-cta-dark {
+    background: radial-gradient(100% 80% at 20% 100%, #1A235A 0%, #111844 60%);
+  }
+  .bg-strip-dark {
+    background: linear-gradient(135deg, #111844 0%, #111844 55%, #26316F 100%);
+  }
+  /* Film-grain noise overlay for dark sections */
+  .noise {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.4;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.3'/%3E%3C/svg%3E");
+  }
+  /* Grain for placeholder blocks (position-relative parents) */
   .grain::after {
     content: "";
     position: absolute;
@@ -179,22 +207,88 @@
     mix-blend-mode: overlay;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
   }
-  .card-glow {
-    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s, box-shadow 0.35s;
+  /* Primary pill — light on dark */
+  .btn-primary-light {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    background: #FFFFFF;
+    color: #111844;
+    padding: 0.9rem 1.75rem;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s, background-color 0.3s;
   }
-  .card-glow:hover {
-    transform: translateY(-6px);
-    border-color: rgba(114, 136, 174, 0.65);
-    box-shadow: 0 18px 48px -16px rgba(17, 24, 68, 0.45), 0 0 0 1px rgba(114, 136, 174, 0.25);
+  .btn-primary-light:hover {
+    transform: scale(1.04);
+    background: #E6ECF4;
+    box-shadow: 0 10px 34px -10px rgba(75, 86, 148, 0.7);
   }
-  .btn-sheen {
-    transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s, background-color 0.25s, border-color 0.25s, color 0.25s;
+  .btn-primary-light:active { transform: scale(0.98); }
+  /* Primary pill — navy on light */
+  .btn-primary-dark {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    background: #111844;
+    color: #FFFFFF;
+    padding: 0.9rem 1.75rem;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s, background-color 0.3s;
   }
-  .btn-sheen:hover {
-    transform: scale(1.03);
-    box-shadow: 0 8px 30px -8px rgba(75, 86, 148, 0.65);
+  .btn-primary-dark:hover {
+    transform: scale(1.04);
+    background: #1A235A;
+    box-shadow: 0 10px 34px -10px rgba(17, 24, 68, 0.55);
   }
-  .btn-sheen:active {
-    transform: scale(0.98);
+  .btn-primary-dark:active { transform: scale(0.98); }
+  /* Ghost pill on dark */
+  .btn-ghost-dark {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #FFFFFF;
+    padding: 0.9rem 1.75rem;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s, background-color 0.3s;
+  }
+  .btn-ghost-dark:hover {
+    transform: scale(1.04);
+    border-color: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.05);
+  }
+  .btn-ghost-dark:active { transform: scale(0.98); }
+  /* Giant outlined wordmark (footer) */
+  .outline-word {
+    color: transparent;
+    -webkit-text-stroke: 1px #CDD7E6;
+  }
+  /* Structure ticker marquee */
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .animate-ticker {
+    animation: ticker 42s linear infinite;
+  }
+  /* Slow orbit rotation (globe mark) */
+  @keyframes spin-slower {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  .animate-spin-slower {
+    animation: spin-slower 42s linear infinite;
   }
 }

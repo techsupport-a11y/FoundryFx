@@ -23,10 +23,34 @@ export function Reveal({
       initial={{ opacity: 0, y }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-70px" }}
-      transition={{ duration: 0.75, delay, ease: EASE }}
+      transition={{ duration: 0.8, delay, ease: EASE }}
     >
       {children}
     </motion.div>
+  );
+}
+
+/* Masked line reveal — text rises out of an overflow-hidden wrapper. */
+export function RevealLine({
+  children,
+  delay = 0,
+  className,
+}: {
+  children: ReactNode;
+  delay?: number;
+  className?: string;
+}) {
+  return (
+    <span className={`block overflow-hidden ${className ?? ""}`}>
+      <motion.span
+        className="block will-change-transform"
+        initial={{ y: "112%" }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.9, delay, ease: EASE }}
+      >
+        {children}
+      </motion.span>
+    </span>
   );
 }
 
@@ -58,14 +82,12 @@ export function CountUp({
   to,
   suffix = "",
   prefix = "",
-  decimals = 0,
-  duration = 1.8,
+  duration = 1.9,
   className,
 }: {
   to: number;
   suffix?: string;
   prefix?: string;
-  decimals?: number;
   duration?: number;
   className?: string;
 }) {
@@ -78,7 +100,7 @@ export function CountUp({
     const controls = animate(0, to, {
       duration,
       ease: "easeOut",
-      onUpdate: (v) => setVal(v),
+      onUpdate: (v) => setVal(Math.round(v)),
     });
     return () => controls.stop();
   }, [inView, to, duration]);
@@ -86,7 +108,7 @@ export function CountUp({
   return (
     <span ref={ref} className={className}>
       {prefix}
-      {val.toFixed(decimals)}
+      {val}
       {suffix}
     </span>
   );

@@ -20,15 +20,17 @@ Premium marketing website for Foundry (foundryfx.org), an FX structured product 
 - Alternating dark/light sections, scroll-triggered reveals, parallax mesh, staggered grids, count-up stats, micro-interactions
 - Responsive with mobile hamburger; Login/Dashboard NOT built here
 
-## Implemented (2026-09-04)
-- Home: hero (INTRODUCING / FOUNDRY / Build. Refine. Execute., dual CTAs, tilted AUD/USD collar trade-builder mockup, mesh + candlestick parallax), How-it-works 3-step strip, features two-column + stacked panels, catalogue grid (6 structures + "+65 more" tile), dark stats strip with count-up (71/14/100%/40+), enterprise trust strip, final CTA, video placeholder modal
-- About: header, SwitchYard story, large-serif mission, values grid, team placeholder headshots, hash-chained audit trail section with hexagon chain diagram, full-bleed photo CTA block
-- Services: 3 alternating pillars (Deal Structuring / Live Pricing & Risk / Execution & Audit Trail) each with bespoke mockup + bullets, structure family chips, CTA
-- Contact: split layout, floating-label form with success state + reference number, desk/region details, portal link
-- Favicon = hexagon-cube mark; page title/meta set
+## Implemented (2026-09-04, v2 redesign)
+- Full redesign to mirror the reference showcase design (structure-showcase-9) in the Foundry navy palette (#111844/#4B5694/#7288AE), fonts Fraunces (display) + Inter (body) + JetBrains Mono (mock data)
+- Boot preloader (hex mark + tracked wordmark + progress line, lifts away), canvas particle MeshCanvas with parallax, procedural CandleArt, noise grain overlays
+- Home: hero with masked-line reveal + perspective-tilted BrowserFrame trade-builder mock (scenario chart, trade summary, provider comparison w/ Meridian FX best row), scrolling structure ticker, How-it-works 3 steps with connecting line, Desk Workbench features + floating scenario-analysis mock, catalogue grid with payoff glyphs + dark +65 tile, stats strip (71 / 15 / 100% / 24-5) with count-up, gap-px enterprise trust grid, Final CTA with spinning GlobeMark
+- About: "One workbench. No spreadsheets." header, numbered rails (01 The problem / 02 The workbench + placeholder visual / 03 The record with audit-chain cards), serif mission statement, values grid (Precision/Control/Craft/Candour)
+- Services: "Three pillars. One platform." header; pillars alternate mockup-left/right — field builder mock (chips + dynamic fields + "Not used by Collar"), sensitivity ladder mock (LP premium/margin toggle, greeks), termsheet + trade journal mock (light card)
+- Contact: "Talk to the team." dark page, underline-style form in glass card, "Transmit message" → success state with mono ref; right rail: desk@foundryfx.org, client portal card, regions list
+- Footer: white, link columns (Platform/Company/Access), giant outlined FOUNDRY wordmark, mono legal bar
 
 ## Backlog / next tasks
-- P0: Swap placeholder imagery (product screenshots, team headshots, office photo, product film video) — all marked with data-placeholder
+- P0: Swap placeholder mockups/visuals (data-placeholder tagged) for real product screenshots
 - P1: Wire Watch Video modal to real product film embed
 - P1: Point domain foundryfx.org at deployment; confirm Login URL routing to /syfx/portal/
 - P2: Optional backend endpoint to persist contact enquiries + email notification (Resend)
