@@ -4,7 +4,7 @@
     "tagline": "Build. Refine. Execute.",
     "company": "SwitchYard Capital",
     "domain": "foundryfx.org",
-    "external_portal_url": "https://foundryfx.org/syfx/portal/",
+    "external_portal_url": "https://portal.foundryfx.org/syfx/portal/",
     "app_type": "marketing_site"
   },
   "color_palette": {
@@ -85,7 +85,7 @@
     "Strictly adhere to the designated color palette (#111844, #4B5694, #7288AE, #000000, #FFFFFF).",
     "Use Fraunces serif for all major headlines and display elements, and Inter for body/UI text.",
     "Include data-testid attributes on all interactive elements, buttons, inputs, links, and key content cards.",
-    "Ensure the ghost Login button links directly to https://foundryfx.org/syfx/portal/",
+    "Ensure the ghost Login button links directly to https://portal.foundryfx.org/syfx/portal/",
     "Maintain responsive mobile behavior with a clean slide-over mobile drawer containing the Hexagon mark."
   ]
 }

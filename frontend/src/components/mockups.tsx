@@ -153,7 +153,7 @@ export function ScenarioMock() {
   ];
   return (
     <div className="relative" data-testid="scenario-mock">
-      <BrowserFrame url="foundryfx.org/syfx/portal/scenarios" comment="placeholder: features scenario-analysis panel — swap for production screenshot">
+      <BrowserFrame url="portal.foundryfx.org/syfx/portal/scenarios" comment="placeholder: features scenario-analysis panel — swap for production screenshot">
         <div className="p-4">
           <div className="flex items-center justify-between">
             <p className="mock-caption">Scenario analysis — AUD/USD Collar</p>
@@ -205,7 +205,7 @@ export function FieldBuilderMock() {
   ];
   const unused = ["Participation rate", "Barrier level", "Fixing schedule"];
   return (
-    <BrowserFrame url="foundryfx.org/syfx/portal/structures/collar" comment="placeholder: deal structuring field builder — swap for production screenshot">
+    <BrowserFrame url="portal.foundryfx.org/syfx/portal/structures/collar" comment="placeholder: deal structuring field builder — swap for production screenshot">
       <div data-testid="field-builder-mock" className="p-4">
         <div className="flex flex-wrap gap-1.5">
           {["Forward", "Collar", "Seagull", "TARF", "Knock-In Barrier"].map((s) => (
@@ -250,7 +250,7 @@ export function FieldBuilderMock() {
 /* Services pillar 2 — sensitivity ladder with LP premium / margin toggle. */
 export function SensitivityMock() {
   return (
-    <BrowserFrame url="foundryfx.org/syfx/portal/scenarios" comment="placeholder: live pricing sensitivity panel — swap for production screenshot">
+    <BrowserFrame url="portal.foundryfx.org/syfx/portal/scenarios" comment="placeholder: live pricing sensitivity panel — swap for production screenshot">
       <div data-testid="sensitivity-mock" className="p-4">
         <div className="flex items-center justify-between">
           <p className="mock-caption">Sensitivity — spot ladder</p>

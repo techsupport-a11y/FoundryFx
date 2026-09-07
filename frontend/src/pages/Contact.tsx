@@ -163,7 +163,7 @@ export default function Contact() {
                   data-testid="contact-portal-link"
                   className="group mt-4 inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.25em] text-white transition-colors duration-300 hover:text-slateblue-300"
                 >
-                  foundryfx.org/syfx/portal
+                  portal.foundryfx.org/syfx/portal
                   <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                 </a>
               </div>

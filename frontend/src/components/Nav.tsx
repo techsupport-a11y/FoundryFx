@@ -10,7 +10,7 @@ const LINKS = [
   { to: "/contact", label: "Contact" },
 ];
 
-export const PORTAL_URL = "https://foundryfx.org/syfx/portal/";
+export const PORTAL_URL = "https://portal.foundryfx.org/syfx/portal/";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);

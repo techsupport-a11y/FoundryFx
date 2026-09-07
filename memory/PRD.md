@@ -1,7 +1,7 @@
 # Foundry — FX Structured Product Trade Builder (Marketing Site)
 
 ## Original problem statement
-Premium marketing website for Foundry (foundryfx.org), an FX structured product trade builder for institutional sales desks, by SwitchYard Capital. Marketing/content site only — links out to the real app at foundryfx.org/syfx/portal/ via Login. Strict palette (#111844 / #4B5694 / #7288AE / black / white), Fraunces + Inter, motion/depth/imagery-driven, precise no-hype tone, 4 pages (Home, About, Services, Contact), placeholders clearly marked for asset swaps.
+Premium marketing website for Foundry (foundryfx.org), an FX structured product trade builder for institutional sales desks, by SwitchYard Capital. Marketing/content site only — links out to the real app at portal.foundryfx.org/syfx/portal/ via Login. Strict palette (#111844 / #4B5694 / #7288AE / black / white), Fraunces + Inter, motion/depth/imagery-driven, precise no-hype tone, 4 pages (Home, About, Services, Contact), placeholders clearly marked for asset swaps.
 
 ## Architecture
 - Vite + React 19 + TypeScript + Tailwind v4, `motion` (Framer Motion successor) for scroll reveals/parallax/count-ups
@@ -16,7 +16,7 @@ Premium marketing website for Foundry (foundryfx.org), an FX structured product 
 - Prospective client requesting a demo via Contact
 
 ## Core requirements (static)
-- Nav with hexagon mark + FOUNDRY + "FX Structure Platform", About/Services/Contact, ghost Login → https://foundryfx.org/syfx/portal/
+- Nav with hexagon mark + FOUNDRY + "FX Structure Platform", About/Services/Contact, ghost Login → https://portal.foundryfx.org/syfx/portal/
 - Alternating dark/light sections, scroll-triggered reveals, parallax mesh, staggered grids, count-up stats, micro-interactions
 - Responsive with mobile hamburger; Login/Dashboard NOT built here
 
@@ -35,7 +35,7 @@ Premium marketing website for Foundry (foundryfx.org), an FX structured product 
 
 ## Backlog / next tasks
 - P0: Swap remaining tagged stand-ins (product screenshots, desk photography, product film) for real Foundry assets
-- P1: Point domain foundryfx.org at deployment; confirm Login URL routing to /syfx/portal/
+- P1: Point domain foundryfx.org at deployment; confirm Login URL routing to https://portal.foundryfx.org/syfx/portal/
 - P2: Optional backend endpoint to persist contact enquiries + email notification (Resend)
 - P2: Full 71-structure catalogue page if desired
 - P2: SEO extras (OG tags, sitemap, structured data)

@@ -28,7 +28,7 @@ function FloatingDashboard() {
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         style={{ transform: "perspective(1600px) rotateY(-8deg) rotateX(4deg)" }}
       >
-        <BrowserFrame url="foundryfx.org/syfx/portal/" comment="placeholder: login showcase panel — swap for production screenshot">
+        <BrowserFrame url="portal.foundryfx.org/syfx/portal/" comment="placeholder: login showcase panel — swap for production screenshot">
           <TradeBuilderMock />
         </BrowserFrame>
       </motion.div>
@@ -37,7 +37,7 @@ function FloatingDashboard() {
 }
 
 /* Login placeholder — real authentication lives on the client portal.
-   This screen only hands off to foundryfx.org/syfx/portal/. */
+   This screen only hands off to portal.foundryfx.org/syfx/portal/. */
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

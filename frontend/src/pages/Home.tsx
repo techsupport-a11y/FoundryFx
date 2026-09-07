@@ -141,7 +141,7 @@ export default function Home() {
                 className="relative"
               >
                 <div style={{ transform: "perspective(1600px) rotateY(-9deg) rotateX(5deg)" }}>
-                  <BrowserFrame url="foundryfx.org/syfx/portal/" comment="placeholder: hero trade-builder mockup — swap for production screenshot">
+                  <BrowserFrame url="portal.foundryfx.org/syfx/portal/" comment="placeholder: hero trade-builder mockup — swap for production screenshot">
                     <TradeBuilderMock />
                   </BrowserFrame>
                 </div>
