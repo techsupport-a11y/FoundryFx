@@ -38,7 +38,7 @@ export default function Nav() {
               FOUNDRY
             </span>
             <span className="mt-1 block text-[8px] font-medium uppercase tracking-[0.34em] text-slateblue-500">
-              FX Structure Platform
+              FX Structuring Platform for Sales
             </span>
           </span>
         </Link>

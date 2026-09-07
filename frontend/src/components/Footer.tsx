@@ -39,9 +39,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="mt-6 max-w-xs text-sm leading-relaxed text-navy-900/60">
-              Foundry is the FX structure platform from SwitchYard Capital — one
-              workbench for structuring, pricing and executing structured FX
-              trades, sealed end to end.
+              Foundry is the FX structured product workbench for sales desks, bringing structuring, pricing and execution together in one sealed, end-to-end platform.
             </p>
           </div>
           {COLUMNS.map((col) => (

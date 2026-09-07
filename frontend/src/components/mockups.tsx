@@ -208,7 +208,7 @@ export function FieldBuilderMock() {
     <BrowserFrame url="foundryfx.org/syfx/portal/structures/collar" comment="placeholder: deal structuring field builder — swap for production screenshot">
       <div data-testid="field-builder-mock" className="p-4">
         <div className="flex flex-wrap gap-1.5">
-          {["Forward", "Collar", "Seagull", "TARF", "KI Barrier"].map((s) => (
+          {["Forward", "Collar", "Seagull", "TARF", "Knock-In Barrier"].map((s) => (
             <span
               key={s}
               className={`rounded-full px-3 py-1 font-mono text-[9px] uppercase tracking-[0.14em] ${

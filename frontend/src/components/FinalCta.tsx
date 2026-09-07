@@ -25,8 +25,8 @@ export default function FinalCta() {
           </Reveal>
           <Reveal delay={0.16}>
             <p className="mt-6 max-w-md text-base leading-relaxed text-slateblue-400">
-              Walk a live collar from structure to ticket with the team — thirty
-              minutes, your book or ours.
+              Walk through from structure to ticket with the team — thirty
+              minutes. The Scale you have been waiting for.
             </p>
           </Reveal>
           <Reveal delay={0.24}>

@@ -25,7 +25,7 @@ const STEPS = [
   {
     icon: Gauge,
     title: "Price",
-    text: "Reprice live across providers. Compare premium, margin and scenario ladders side by side.",
+    text: "Live pricing across your LPs",
   },
   {
     icon: CheckCircle2,
@@ -35,33 +35,33 @@ const STEPS = [
 ];
 
 const FEATURES = [
-  { icon: Sparkles, title: "Intuitive Trade Builder", text: "A dynamic field builder renders only the inputs each structure requires — nothing else on screen." },
-  { icon: LineChart, title: "Scenario & Sensitivity Analysis", text: "Spot ladders, volatility shifts and time decay, repriced as you move the assumptions." },
-  { icon: Layers, title: "Multi-Provider Pricing", text: "LP premium against your margin, provider by provider, on the same ticket." },
+  { icon: Sparkles, title: "Intuitive Trade Builder", text: "A dynamic field builder renders only the inputs each structure requires, nothing else on screen." },
+  { icon: LineChart, title: "Portfolio & Pipeline Management", text: "Consolidate your activity to a single UI to do everything you need in distributing & executing structured solutions." },
+  { icon: Layers, title: "Integrated Pricing", text: "LP premium connectivity for efficient margining" },
   { icon: ShieldCheck, title: "Governance & Control", text: "Role-based permissions, approval workflows and a sealed record of every decision." },
   { icon: Cloud, title: "Cloud Native SaaS", text: "No install, no version drift. The current build, on every desk, everywhere." },
 ];
 
 const STRUCTURES = [
-  { name: "Forward", desc: "Outright and window delivery at a fixed rate.", path: "M4 32 L60 10", guides: [] as string[] },
-  { name: "Collar", desc: "Protected range, tuned to zero or reduced premium.", path: "M4 30 H20 L44 12 H60", guides: ["M20 4 V36", "M44 4 V36"] },
-  { name: "Seagull", desc: "Three-leg structure for extended participation.", path: "M4 32 L20 24 L34 24 L46 14 L60 14", guides: ["M20 4 V36", "M46 4 V36"] },
-  { name: "Knock-In Barrier", desc: "Activates only if the barrier trades.", path: "M4 30 H30 L60 8", guides: ["M30 4 V36"] },
-  { name: "Knock-Out Barrier", desc: "Extinguishes if the barrier trades.", path: "M4 8 L30 30 H60", guides: ["M30 4 V36"] },
-  { name: "TARF", desc: "Target accrual with gains capped at the target.", path: "M4 32 H13 V27 H22 V22 H31 V17 H40 V13 H60", guides: ["M4 10 H60"] },
+  { name: "Forward", desc: "Outright protection that improves as markets advance", path: "M4 32 L60 10", guides: [] as string[] },
+  { name: "Dynamic Forwards", desc: "Protection with impoved outcomes within a range", path: "M4 30 H20 L44 12 H60", guides: ["M20 4 V36", "M44 4 V36"] },
+  { name: "Seagull", desc: "Three-leg structure for customised participation.", path: "M4 32 L20 24 L34 24 L46 14 L60 14", guides: ["M20 4 V36", "M46 4 V36"] },
+  { name: "Knock-In Barriers", desc: "Activates only if the barrier trades.", path: "M4 30 H30 L60 8", guides: ["M30 4 V36"] },
+  { name: "Knock-Out Barriers", desc: "Extinguishes if the barrier trades.", path: "M4 8 L30 30 H60", guides: ["M30 4 V36"] },
+  { name: "TARF's", desc: "Target accruals variants for enhancement", path: "M4 32 H13 V27 H22 V22 H31 V17 H40 V13 H60", guides: ["M4 10 H60"] },
 ];
 
 const STATS = [
-  { value: 71, suffix: "", label: "Structures supported", testId: "stat-structures" },
-  { value: 15, suffix: "", label: "Liquidity providers integrated", testId: "stat-providers" },
+  { value: 71, suffix: "", label: "Structures Supported (& growing)", testId: "stat-structures" },
+  { value: 15, suffix: "", label: "Customised Connectivity - Liquidity providers integrated", testId: "stat-providers" },
   { value: 100, suffix: "%", label: "Audit events hash-chained", testId: "stat-audit" },
   { value: 24, suffix: "/5", label: "Market coverage, globally", testId: "stat-coverage" },
 ];
 
 const TRUST = [
-  { icon: Globe, title: "Global Reach", desc: "Multi-region deployment follows the desk — same book, every centre." },
-  { icon: Radio, title: "Real-Time Data", desc: "Streaming rates; every structure reprices on tick." },
-  { icon: TrendingUp, title: "Intelligent Insights", desc: "Scenario ladders surface the risk before you price it." },
+  { icon: Globe, title: "Global Reach", desc: "Multi-region deployment follows the desk, desired book, every centre." },
+  { icon: Radio, title: "Real-Time Data", desc: "Streaming rates; every structure repriced as needed." },
+  { icon: TrendingUp, title: "Intelligent Insights", desc: "Portfolio & Sales Pipeline insights to stay on point & capture opportunities" },
   { icon: ShieldCheck, title: "Security First", desc: "Hash-chained, tamper-evident records on every event." },
   { icon: Users, title: "Built for Teams", desc: "Shared books, approvals and role-based access." },
 ];
@@ -106,13 +106,13 @@ export default function Home() {
               <RevealLine delay={HERO_DELAY + 0.15}>FOUNDRY</RevealLine>
             </h1>
             <p className="font-display mt-3 text-2xl leading-tight text-slateblue-400 sm:text-3xl">
-              <RevealLine delay={HERO_DELAY + 0.3}>Build. Refine. Execute.</RevealLine>
+              <RevealLine delay={HERO_DELAY + 0.3}>Build. Distribute. Execute</RevealLine>
             </p>
             <Reveal delay={HERO_DELAY + 0.45}>
               <p className="mt-7 max-w-md text-base leading-relaxed text-slateblue-400">
-                The structured product workbench for institutional FX sales desks —
-                71 structures, live multi-provider pricing and a hash-chained audit
-                trail on a single screen.
+                Bringing Scale to FX Structured Product Sales — develop, distribute and sell FX
+                structures from a single workbench, with 71 client ready structures, pricing
+                connectivity and a hash-chained audit trail.
               </p>
             </Reveal>
             <Reveal delay={HERO_DELAY + 0.6}>
@@ -198,7 +198,7 @@ export default function Home() {
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className="font-display mt-4 text-3xl tracking-tight text-navy-900 sm:text-4xl">
-                Everything you need to build better trades.
+                Everything you need to scale.
               </h2>
             </Reveal>
             <div className="mt-12 space-y-8">
@@ -272,8 +272,8 @@ export default function Home() {
                 <span className="font-display text-4xl text-white">+65</span>
                 <div className="relative flex items-end justify-between gap-4">
                   <span className="text-sm leading-relaxed text-white/70">
-                    more structures in the full catalogue — accumulators, dual
-                    currency, pivots, ratio forwards
+                    more structures in the full catalogue — accumulators, Dynamic
+                    Improvers, pivots, ratio forwards
                   </span>
                   <ArrowUpRight className="h-5 w-5 shrink-0 text-white transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" />
                 </div>
@@ -349,7 +349,26 @@ export default function Home() {
           <Reveal>
             <p className="eyebrow text-slateblue-300">In the wild</p>
             <p className="font-display mt-4 max-w-lg text-3xl leading-snug tracking-tight text-white sm:text-4xl">
-              The desk's whole day, on one screen.
+              The desk's structuring sales day, in one solution.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ============ SCALE THE OPPORTUNITY ============ */}
+      <section data-testid="scale-the-opportunity" className="border-t border-slateblue-100 bg-white py-16 lg:py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <Reveal delay={0.08}>
+            <h2 className="font-display mt-4 text-3xl tracking-tight text-navy-900 sm:text-4xl">
+              Scale the opportunity
+            </h2>
+          </Reveal>
+          <Reveal delay={0.16}>
+            <p className="mt-8 max-w-2xl text-base leading-relaxed text-navy-900/60">
+              FOUNDRY transforms the economics of FX Structured sales, enabling teams to develop and distribute more solutions, manage a larger deal pipeline and generate more revenue without increasing operational complexity.
+            </p>
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-navy-900/60">
+              By simplifying the client experience and streamlining the journey from structure to execution, FOUNDRY allows sales teams to spend less time managing process and more time creating opportunities.
             </p>
           </Reveal>
         </div>
