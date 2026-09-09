@@ -6,10 +6,12 @@ from starlette.middleware.cors import CORSMiddleware
 import os
 import logging
 from pathlib import Path
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, EmailStr
 from typing import List
 import uuid
 from datetime import datetime
+
+from lib.emailer import send_contact_email, contact_email_enabled
 
 
 ROOT_DIR = Path(__file__).parent
@@ -43,6 +45,16 @@ class StatusCheck(BaseModel):
 class StatusCheckCreate(BaseModel):
     client_name: str
 
+class ContactMessageCreate(BaseModel):
+    name: str = Field(min_length=1, max_length=120)
+    company: str = Field(default="", max_length=120)
+    email: EmailStr
+    message: str = Field(min_length=1, max_length=5000)
+
+class ContactMessageOut(BaseModel):
+    id: str
+    delivered: bool
+
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
 async def root():
@@ -59,6 +71,34 @@ async def create_status_check(input: StatusCheckCreate):
 async def get_status_checks():
     status_checks = await db.status_checks.find().to_list(1000)
     return [StatusCheck(**status_check) for status_check in status_checks]
+
+@api_router.post("/contact", response_model=ContactMessageOut)
+async def create_contact_message(input: ContactMessageCreate):
+    record = {
+        **input.model_dump(),
+        "created_at": datetime.utcnow(),
+    }
+    result = await db.contact_messages.insert_one(record)
+    message_id = str(result.inserted_id)
+
+    if not contact_email_enabled():
+        logger.warning("contact stored but not emailed: MAIL_MAILER/MAIL_HOST not configured")
+        return ContactMessageOut(id=message_id, delivered=False)
+
+    delivered = False
+    try:
+        await asyncio.to_thread(
+            send_contact_email,
+            input.name,
+            input.email,
+            input.message,
+            input.company,
+        )
+        delivered = True
+    except Exception:
+        logger.exception("contact email to %s failed", input.email)
+
+    return ContactMessageOut(id=message_id, delivered=delivered)
 
 # Include the router in the main app
 app.include_router(api_router)

@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { HexMark } from "./HexMark";
-import { PORTAL_URL } from "./Nav";
 
 const COLUMNS = [
   {
@@ -10,6 +9,7 @@ const COLUMNS = [
       { label: "Deal Structuring", to: "/services" },
       { label: "Live Pricing & Risk", to: "/services" },
       { label: "Execution & Audit", to: "/services" },
+      { label: "Managing & Reporting", to: "/services" },
     ],
   },
   {
@@ -39,7 +39,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="mt-6 max-w-xs text-sm leading-relaxed text-navy-900/60">
-              Foundry is the FX structured product workbench for sales desks, bringing structuring, pricing and execution together in one sealed, end-to-end platform.
+              Scale FX Structured Product Sales. Build more solutions, progress more opportunities and convert more clients from a single workbench.
             </p>
           </div>
           {COLUMNS.map((col) => (
@@ -64,14 +64,14 @@ export default function Footer() {
             <p className="eyebrow text-slateblue-500">Access</p>
             <ul className="mt-6 space-y-3.5 text-sm">
               <li>
-                <a
-                  href={PORTAL_URL}
+                <Link
+                  to="/login"
                   data-testid="footer-link-client-portal"
                   className="group inline-flex items-center gap-1 text-navy-900/70 transition-colors duration-300 hover:text-navy-900"
                 >
                   Client Portal
                   <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                </a>
+                </Link>
               </li>
               <li>
                 <Link

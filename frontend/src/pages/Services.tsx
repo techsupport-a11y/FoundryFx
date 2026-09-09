@@ -2,7 +2,7 @@ import { Check } from "lucide-react";
 import { Reveal, RevealLine, ParallaxLayer } from "@/components/motion";
 import { MeshCanvas } from "@/components/MeshCanvas";
 import FinalCta from "@/components/FinalCta";
-import { FieldBuilderMock, SensitivityMock, ExecutionMock } from "@/components/mockups";
+import { FieldBuilderMock, SensitivityMock, ExecutionMock, ReportingMock } from "@/components/mockups";
 
 const PILLARS = [
   {
@@ -10,7 +10,7 @@ const PILLARS = [
     id: "deal-structuring",
     eyebrow: "Deal Structuring",
     title: "Seventy-one structures. Zero clutter.",
-    body: "The catalogue covers the structures a desk actually trades — forwards, collars, seagulls, barriers, TARFs, accumulators. A dynamic field builder renders only the inputs each structure needs, so a collar never asks for a barrier.",
+    body: "The catalogue covers the structures a desk actually trades — forwards, participation, barriers, TARFs, accumulators etc. A dynamic field builder renders only the inputs each structure needs.",
     bullets: [
       "71-structure catalogue, forwards to TARFs",
       "Dynamic field builder — only relevant inputs",
@@ -23,12 +23,12 @@ const PILLARS = [
     n: "02",
     id: "live-pricing",
     eyebrow: "Live Pricing & Risk",
-    title: "Repriced on every keystroke.",
-    body: "Rates stream in and the structure reprices live. Flip between LP premium and your margin, then push the trade through spot, volatility and time ladders before you commit.",
+    title: "Refined on every keystroke.",
+    body: "LP Connected to price the structure live. Engineer your desired LP premium or notional margin %, then review the workings of your trades risk before you commit.",
     bullets: [
-      "Live repricing on every input change",
+      "Refinement on every input change",
       "LP premium vs margin toggle",
-      "Sensitivity ladders across spot, vol and time",
+      "Trade Dynamics with Sensitivity ladders across spot, vol and time",
     ],
     mockup: <SensitivityMock />,
     flip: true,
@@ -48,6 +48,22 @@ const PILLARS = [
     mockup: <ExecutionMock />,
     flip: false,
   },
+  {
+    n: "04",
+    id: "managing-reporting",
+    eyebrow: "Managing & Reporting",
+    title: "From activity to actionable insights.",
+    body: "Track the full lifecycle of your book in real time. Monitor opportunities, stay on top of open deals, and manage outcomes and performance across clients, currencies and products — turning every data point into a clear action and measurable return.",
+    bullets: [
+      "Live opportunity and pipeline tracking",
+      "Follow-up on open opportunities",
+      "Expiry and deal performance monitoring",
+      "Client, product and currency-level analytics",
+      "Revenue and ROI insights across your book",
+    ],
+    mockup: <ReportingMock />,
+    flip: true,
+  },
 ];
 
 export default function Services() {
@@ -64,8 +80,8 @@ export default function Services() {
             <p className="eyebrow text-slateblue-500">Services</p>
           </Reveal>
           <h1 className="font-display mt-6 text-4xl tracking-tight sm:text-5xl lg:text-6xl">
-            <RevealLine delay={0.15} className="text-white">Three pillars.</RevealLine>
-            <RevealLine delay={0.3} className="text-slateblue-400">One platform.</RevealLine>
+            <RevealLine delay={0.15} className="text-white">Four Foundations.</RevealLine>
+            <RevealLine delay={0.3} className="text-slateblue-400">One Platform.</RevealLine>
           </h1>
           <Reveal delay={0.45}>
             <p className="mt-7 max-w-md text-base leading-relaxed text-slateblue-400">
