@@ -290,7 +290,7 @@
     to { transform: translateX(-50%); }
   }
   .animate-ticker {
-    animation: ticker 42s linear infinite;
+    animation: ticker 60s linear infinite;
   }
   /* Slow orbit rotation (globe mark) */
   @keyframes spin-slower {

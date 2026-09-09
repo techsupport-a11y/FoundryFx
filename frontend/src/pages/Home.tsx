@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform, AnimatePresence } from "motion/react";
 import {
   ArrowRight, ArrowUpRight, Play, X, Sparkles, LineChart, Layers,
   ShieldCheck, Cloud, Workflow, Gauge, CheckCircle2,
-  Globe, Radio, TrendingUp, Users,
+  Globe, TrendingUp, Users,
 } from "lucide-react";
 import { Reveal, RevealLine, CountUp, ParallaxLayer } from "@/components/motion";
 import { MeshCanvas } from "@/components/MeshCanvas";
@@ -25,7 +25,7 @@ const STEPS = [
   {
     icon: Gauge,
     title: "Price",
-    text: "Live pricing across your LPs",
+    text: "Price live across your LP's",
   },
   {
     icon: CheckCircle2,
@@ -35,15 +35,15 @@ const STEPS = [
 ];
 
 const FEATURES = [
-  { icon: Sparkles, title: "Intuitive Trade Builder", text: "A dynamic field builder renders only the inputs each structure requires, nothing else on screen." },
-  { icon: LineChart, title: "Portfolio & Pipeline Management", text: "Consolidate your activity to a single UI to do everything you need in distributing & executing structured solutions." },
+  { icon: Sparkles, title: "Intuitive Trade Builder", text: "Create complex FX structures through a simple, guided workflow that shows only what's needed for each trade. Sales teams can build solutions quickly, while clients receive clear, structured outputs that make complex products easier to understand and buy." },
+  { icon: LineChart, title: "Portfiolio & Pipeline Management", text: "One interface to manage your structured FX activity — from client analytics and pipeline visibility to distribution and execution. Understand client activity, prioritise opportunities and drive more revenue from a single view." },
   { icon: Layers, title: "Integrated Pricing", text: "LP premium connectivity for efficient margining" },
   { icon: ShieldCheck, title: "Governance & Control", text: "Role-based permissions, approval workflows and a sealed record of every decision." },
   { icon: Cloud, title: "Cloud Native SaaS", text: "No install, no version drift. The current build, on every desk, everywhere." },
 ];
 
 const STRUCTURES = [
-  { name: "Forward", desc: "Outright protection that improves as markets advance", path: "M4 32 L60 10", guides: [] as string[] },
+  { name: "Tracker", desc: "Outright protection that improves as markets advance", path: "M4 32 L60 10", guides: [] as string[] },
   { name: "Dynamic Forwards", desc: "Protection with impoved outcomes within a range", path: "M4 30 H20 L44 12 H60", guides: ["M20 4 V36", "M44 4 V36"] },
   { name: "Seagull", desc: "Three-leg structure for customised participation.", path: "M4 32 L20 24 L34 24 L46 14 L60 14", guides: ["M20 4 V36", "M46 4 V36"] },
   { name: "Knock-In Barriers", desc: "Activates only if the barrier trades.", path: "M4 30 H30 L60 8", guides: ["M30 4 V36"] },
@@ -52,18 +52,19 @@ const STRUCTURES = [
 ];
 
 const STATS = [
-  { value: 71, suffix: "", label: "Structures Supported (& growing)", testId: "stat-structures" },
+  { value: 71, suffix: "", label: "Structures Supported (Built on Demand)", testId: "stat-structures" },
   { value: 15, suffix: "", label: "Customised Connectivity - Liquidity providers integrated", testId: "stat-providers" },
   { value: 100, suffix: "%", label: "Audit events hash-chained", testId: "stat-audit" },
   { value: 24, suffix: "/5", label: "Market coverage, globally", testId: "stat-coverage" },
 ];
 
 const TRUST = [
-  { icon: Globe, title: "Global Reach", desc: "Multi-region deployment follows the desk, desired book, every centre." },
-  { icon: Radio, title: "Real-Time Data", desc: "Streaming rates; every structure repriced as needed." },
-  { icon: TrendingUp, title: "Intelligent Insights", desc: "Portfolio & Sales Pipeline insights to stay on point & capture opportunities" },
-  { icon: ShieldCheck, title: "Security First", desc: "Hash-chained, tamper-evident records on every event." },
-  { icon: Users, title: "Built for Teams", desc: "Shared books, approvals and role-based access." },
+  { icon: Globe, title: "Global Access", desc: "Access structured FX capabilities wherever your teams and clients operate, with a single, customisable platform designed for multi-region and jurisdiction-ready deployment." },
+  { icon: Workflow, title: "Sales Streamlined", desc: "Simplify the journey from structure to client with guided education, streamlined sales workflows, pipeline visibility and execution in one connected platform." },
+  { icon: TrendingUp, title: "Client Analytics", desc: "Turn client activity and portfolio data into actionable insights — identify engagement, opportunities and where to focus next." },
+  { icon: ShieldCheck, title: "Security First", desc: "Secure every step of the client journey — from private delivery and secure document access to OTP verification, digital acceptance and approval." },
+  { icon: Users, title: "Organisational Growth", desc: "Built to scale — supporting more clients, more opportunities and more structured FX activity without adding complexity" },
+  { icon: Gauge, title: "Productivity", desc: "Reduce operational costs and manual processes while increasing productivity and structured FX capacity across the organisation." },
 ];
 
 function PayoffGlyph({ path, guides }: { path: string; guides: string[] }) {
@@ -106,13 +107,13 @@ export default function Home() {
               <RevealLine delay={HERO_DELAY + 0.15}>FOUNDRY</RevealLine>
             </h1>
             <p className="font-display mt-3 text-2xl leading-tight text-slateblue-400 sm:text-3xl">
-              <RevealLine delay={HERO_DELAY + 0.3}>Build. Distribute. Execute</RevealLine>
+              <RevealLine delay={HERO_DELAY + 0.3}>Discover. Create. Capture. Execute</RevealLine>
             </p>
             <Reveal delay={HERO_DELAY + 0.45}>
               <p className="mt-7 max-w-md text-base leading-relaxed text-slateblue-400">
-                Bringing Scale to FX Structured Product Sales — develop, distribute and sell FX
-                structures from a single workbench, with 71 client ready structures, pricing
-                connectivity and a hash-chained audit trail.
+                Scale FX Structured Product Sales. Build more solutions, progress more opportunities and 
+                convert more clients from a single workbench — with 71 client-ready structures, integrated 
+                pricing connectivity and a complete end-to-end workflow.
               </p>
             </Reveal>
             <Reveal delay={HERO_DELAY + 0.6}>
@@ -160,7 +161,7 @@ export default function Home() {
           <Reveal>
             <p className="eyebrow text-slateblue-500">How it works</p>
           </Reveal>
-          <Reveal delay={0.08}>
+          <Reveal delay={0.06}>
             <h2 className="font-display mt-4 text-3xl tracking-tight text-navy-900 sm:text-4xl">
               Structure to ticket in three moves.
             </h2>
@@ -172,15 +173,15 @@ export default function Home() {
             {STEPS.map((s, i) => (
               <Reveal key={s.title} delay={0.09 * i} testId={`step-${s.title.toLowerCase()}`}>
                 <div className="relative">
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center">
                     <span className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full border border-slateblue-200 bg-white">
                       <s.icon className="h-4 w-4 text-royal-600" />
                     </span>
-                    <span className="font-mono text-[10px] tracking-[0.3em] text-slateblue-500">
-                      0{i + 1}
-                    </span>
                   </div>
-                  <h3 className="font-display mt-6 text-xl text-navy-900">{s.title}</h3>
+                  <p className="font-mono mt-4 text-[11px] font-semibold tracking-[0.3em] text-slateblue-500">
+                    0{i + 1}
+                  </p>
+                  <h3 className="font-display mt-5 text-xl text-navy-900">{s.title}</h3>
                   <p className="mt-2 max-w-xs text-sm leading-relaxed text-navy-900/60">{s.text}</p>
                 </div>
               </Reveal>
@@ -307,15 +308,15 @@ export default function Home() {
       <section data-testid="trust-strip" className="relative bg-white">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
           <Reveal>
-            <p className="eyebrow text-slateblue-500">Enterprise</p>
+            <p className="eyebrow text-slateblue-500">From Boutique to Bank</p>
           </Reveal>
           <Reveal delay={0.08}>
             <h2 className="font-display mt-4 max-w-2xl text-3xl tracking-tight text-navy-900 sm:text-4xl">
-              Built for desks that answer to someone.
+              Built for Growth
             </h2>
           </Reveal>
           <Reveal delay={0.16}>
-            <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-slateblue-300/40 bg-slateblue-300/40 sm:grid-cols-2 lg:grid-cols-5">
+            <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-slateblue-300/40 bg-slateblue-300/40 sm:grid-cols-2 lg:grid-cols-6">
               {TRUST.map((t) => (
                 <div
                   key={t.title}

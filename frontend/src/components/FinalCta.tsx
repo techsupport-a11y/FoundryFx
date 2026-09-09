@@ -25,8 +25,8 @@ export default function FinalCta() {
           </Reveal>
           <Reveal delay={0.16}>
             <p className="mt-6 max-w-md text-base leading-relaxed text-slateblue-400">
-              Walk through from structure to ticket with the team — thirty
-              minutes. The Scale you have been waiting for.
+              We give every salesperson a genuine reason to reach out, built from
+              real client behaviour and market moves, not a calendar reminder.
             </p>
           </Reveal>
           <Reveal delay={0.24}>

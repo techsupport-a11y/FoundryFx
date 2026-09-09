@@ -341,6 +341,81 @@ export function ExecutionMock() {
   );
 }
 
+/* Services pillar 4 — portfolio & pipeline reporting (light card). */
+export function ReportingMock() {
+  const stats: Array<[string, string, string]> = [
+    ["Open deals", "24", "+3 wk"],
+    ["Pipeline", "USD 84.2M", "+12%"],
+    ["Expiries 30D", "9", "USD 31M"],
+    ["ROI", "18.4%", "+2.1%"],
+  ];
+  const pipeline: Array<[string, string, string]> = [
+    ["Meridian FX — Collar 12M", "GBP/USD", "With client"],
+    ["Ashford Capital — Seagull 6M", "EUR/USD", "Quote sent"],
+    ["Lakeshore Ltd — TARF 24M", "AUD/USD", "Approving"],
+    ["Novara Group — Accumulator", "USD/JPY", "Executed"],
+  ];
+  const bars: Array<[string, number]> = [
+    ["Meridian FX", 82],
+    ["Ashford", 64],
+    ["Lakeshore", 47],
+    ["Novara", 29],
+  ];
+  return (
+    <div
+      data-testid="reporting-mock"
+      data-placeholder="placeholder: portfolio & pipeline dashboard — swap for production screenshot"
+      className="overflow-hidden rounded-xl border border-slateblue-200 bg-white shadow-[0_30px_80px_-30px_rgba(17,24,68,0.35)]"
+    >
+      <div className="p-5">
+        <div className="flex items-center justify-between">
+          <p className="mock-caption !text-slateblue-500">Book & pipeline — live</p>
+          <span className="rounded-full border border-royal-600/40 bg-royal-600/[0.08] px-2.5 py-1 font-mono text-[8px] uppercase tracking-[0.2em] text-royal-600">
+            Live
+          </span>
+        </div>
+        <div className="mt-4 grid grid-cols-4 gap-3">
+          {stats.map(([label, value, delta]) => (
+            <div key={label} className="rounded-lg border border-slateblue-100 bg-mist-50 px-3 py-2.5">
+              <p className="font-mono text-[7.5px] uppercase tracking-[0.18em] text-slateblue-500">{label}</p>
+              <p className="mt-1 font-mono text-sm font-semibold text-navy-900">{value}</p>
+              <p className="mt-0.5 font-mono text-[8px] text-royal-600">{delta}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="border-t border-slateblue-100 p-5">
+        <p className="mock-caption !text-slateblue-500">Pipeline — live opportunities</p>
+        <div className="mt-2 divide-y divide-slateblue-100">
+          {pipeline.map(([deal, ccy, stage]) => (
+            <div key={deal} className="flex items-baseline gap-3 py-2">
+              <span className="flex-1 text-[11px] font-medium text-navy-900">{deal}</span>
+              <span className="font-mono text-[9px] text-slateblue-500">{ccy}</span>
+              <span className="rounded-full border border-slateblue-200 bg-mist-50 px-2 py-0.5 font-mono text-[8px] uppercase tracking-[0.12em] text-navy-900">
+                {stage}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="border-t border-slateblue-100 p-5">
+        <p className="mock-caption !text-slateblue-500">Revenue by client — 30D</p>
+        <div className="mt-3 space-y-2">
+          {bars.map(([name, v]) => (
+            <div key={name} className="flex items-center gap-3">
+              <span className="w-20 truncate font-mono text-[9px] text-slateblue-500">{name}</span>
+              <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-mist-50">
+                <div className="h-full rounded-full bg-royal-600" style={{ width: `${v}%` }} />
+              </div>
+              <span className="w-8 text-right font-mono text-[9px] text-navy-900">{v}%</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 /* About — audit chain cards (dark section). */
 export function AuditChain() {
   const blocks = [
@@ -369,6 +444,60 @@ export function AuditChain() {
       <p className="mt-5 text-center font-mono text-[9px] uppercase tracking-[0.24em] text-slateblue-500">
         Tamper-evident rate sealing — FX Engine audit chain
       </p>
+    </div>
+  );
+}
+
+export function TradeFlowWheel() {
+  const stages = [
+    "Solution Built",
+    "Approvals",
+    "Pricing Sent",
+    "Client Engagement & Approval",
+    "Execution",
+    "Ongoing Tracking",
+  ];
+  return (
+    <div data-testid="trade-flow-wheel" data-placeholder="placeholder: trade lifecycle wheel — swap for motion graphic">
+      <div className="relative mx-auto aspect-square w-full max-w-[400px]">
+        <div
+          className="absolute inset-[12%] rounded-full bg-[radial-gradient(circle_at_center,rgba(56,99,249,0.12),transparent_72%)]"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 rounded-full border border-white/10" aria-hidden="true" />
+        <div className="absolute inset-[7%] rounded-full border border-dashed border-slateblue-400/45" aria-hidden="true" />
+        {stages.map((label, i) => (
+          <div key={`stage-${label}`} className="absolute inset-0" style={{ transform: `rotate(${i * 60}deg)` }}>
+            <div
+              className="absolute left-1/2 top-0 w-[7.5rem] rounded-lg border border-white/10 bg-navy-900/80 px-2 py-2 text-center shadow-[0_8px_24px_rgba(9,28,56,0.4)] backdrop-blur transition-colors duration-500 hover:border-slateblue-400/60"
+              style={{ transform: `translate(-50%, -50%) rotate(${-i * 60}deg)` }}
+            >
+              <span className="font-mono text-[9px] tracking-[0.2em] text-slateblue-500">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <p className="mt-0.5 text-[10px] font-semibold uppercase leading-tight tracking-[0.12em] text-white">
+                {label}
+              </p>
+            </div>
+          </div>
+        ))}
+        {stages.map((_, i) => (
+          <div key={`arrow-${i}`} className="absolute inset-0" style={{ transform: `rotate(${i * 60 + 30}deg)` }}>
+            <div
+              className="absolute left-1/2 top-[40%] -translate-x-1/2 -translate-y-1/2 text-sm leading-none text-slateblue-400/70"
+              aria-hidden="true"
+            >
+              ›
+            </div>
+          </div>
+        ))}
+        <div className="absolute left-1/2 top-1/2 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border border-white/10 bg-navy-900/90 text-center shadow-[0_8px_24px_rgba(9,28,56,0.5)] backdrop-blur">
+          <HexMark className="h-5 w-5 text-slateblue-400" strokeWidth={1.6} />
+          <p className="mt-1 text-[8px] font-semibold uppercase tracking-[0.3em] text-slateblue-300">
+            Sealed
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

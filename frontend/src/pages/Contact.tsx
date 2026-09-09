@@ -1,16 +1,11 @@
 import { useState, type FormEvent } from "react";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Reveal, ParallaxLayer } from "@/components/motion";
 import { MeshCanvas } from "@/components/MeshCanvas";
 import { HexMark } from "@/components/HexMark";
-import { PORTAL_URL } from "@/components/Nav";
-
-const REGIONS = [
-  ["London", "EMEA"],
-  ["New York", "AMER"],
-  ["Singapore", "APAC"],
-];
+import { apiPost } from "@/lib/api";
 
 function Field({
   id, label, type = "text", textarea = false, value, onChange,
@@ -53,11 +48,18 @@ function Field({
 export default function Contact() {
   const [form, setForm] = useState({ name: "", company: "", email: "", message: "" });
   const [sent, setSent] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const set = (k: keyof typeof form) => (v: string) => setForm((f) => ({ ...f, [k]: v }));
 
-  const submit = (e: FormEvent) => {
+  const submit = async (e: FormEvent) => {
     e.preventDefault();
-    setSent(true);
+    setError(null);
+    try {
+      await apiPost("/contact", form);
+      setSent(true);
+    } catch {
+      setError("Message failed to transmit. Email the desk directly and we'll be in touch.");
+    }
   };
 
   return (
@@ -130,6 +132,11 @@ export default function Contact() {
                     </div>
                     <Field id="email" label="Email" type="email" value={form.email} onChange={set("email")} />
                     <Field id="message" label="Message" textarea value={form.message} onChange={set("message")} />
+                    {error ? (
+                      <p data-testid="contact-error" className="text-xs leading-relaxed text-red-400">
+                        {error}
+                      </p>
+                    ) : null}
                     <button type="submit" data-testid="contact-submit-button" className="btn-primary-light">
                       Transmit message
                     </button>
@@ -144,11 +151,11 @@ export default function Contact() {
             <Reveal delay={0.2}>
               <p className="eyebrow text-slateblue-500">General</p>
               <a
-                href="mailto:desk@foundryfx.org"
+                href="mailto:Desk@foundryfx.org"
                 data-testid="contact-email-link"
                 className="font-display mt-4 inline-block text-2xl text-white transition-colors duration-300 hover:text-slateblue-300"
               >
-                desk@foundryfx.org
+                Desk@foundryfx.org
               </a>
             </Reveal>
 
@@ -158,31 +165,18 @@ export default function Contact() {
                 <p className="mt-4 text-sm leading-relaxed text-slateblue-400">
                   Existing clients access the trade builder directly.
                 </p>
-                <a
-                  href={PORTAL_URL}
+                <Link
+                  to="/login"
                   data-testid="contact-portal-link"
-                  className="group mt-4 inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.25em] text-white transition-colors duration-300 hover:text-slateblue-300"
+                  className="group mt-5 inline-flex items-center gap-2 rounded-lg bg-royal-600 px-5 py-2.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-colors duration-300 hover:bg-royal-500"
                 >
-                  foundryfx.org/syfx/portal
-                  <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                </a>
+                  Continue to portal
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
+                </Link>
               </div>
             </Reveal>
 
             <Reveal delay={0.36}>
-              <p className="eyebrow text-slateblue-500">Regions</p>
-              {/* PLACEHOLDER: office/regions — swap with real coverage details */}
-              <div data-placeholder="office-regions" className="mt-5">
-                {REGIONS.map(([city, region]) => (
-                  <div key={city} className="flex items-baseline justify-between border-b border-dashed border-white/15 py-3.5">
-                    <span className="text-sm text-white">{city}</span>
-                    <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-slateblue-500">{region}</span>
-                  </div>
-                ))}
-              </div>
-            </Reveal>
-
-            <Reveal delay={0.44}>
               <p className="text-xs leading-relaxed text-slateblue-500">
                 Messages route to the desk. Expect a reply within one business day.
               </p>
