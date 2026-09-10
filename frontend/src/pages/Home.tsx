@@ -62,7 +62,7 @@ type Stat = {
 
 const STATS: Stat[] = [
   { value: 71, suffix: "", label: "Structures Supported (Built on Demand)", testId: "stat-structures" },
-  { symbol: <img src="/symbol.png" alt="" className="h-8 w-auto lg:h-10" />, label: "Customised Connectivity - Liquidity providers integrated", testId: "stat-providers" },
+  { symbol: <img src="/symbol.png" alt="" className="h-11 w-auto lg:h-14" />, label: "Customised Connectivity - Liquidity providers integrated", testId: "stat-providers" },
   { value: 100, suffix: "%", label: "Audit events hash-chained", testId: "stat-audit" },
   { value: 24, suffix: "/5", label: "Market coverage, globally", testId: "stat-coverage" },
 ];
