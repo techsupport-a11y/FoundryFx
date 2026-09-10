@@ -62,7 +62,7 @@ type Stat = {
 
 const STATS: Stat[] = [
   { value: 71, suffix: "", label: "Structures Supported (Built on Demand)", testId: "stat-structures" },
-  { symbol: <img src="/symbol.png" alt="" className="h-14 w-auto lg:h-20" />, label: "Customised Connectivity - Liquidity providers integrated", testId: "stat-providers" },
+  { symbol: <img src="/symbol.png" alt="" className="h-8 w-auto lg:h-10" />, label: "Customised Connectivity - Liquidity providers integrated", testId: "stat-providers" },
   { value: 100, suffix: "%", label: "Audit events hash-chained", testId: "stat-audit" },
   { value: 24, suffix: "/5", label: "Market coverage, globally", testId: "stat-coverage" },
 ];
@@ -301,7 +301,7 @@ export default function Home() {
           {STATS.map((s, i) => (
             <Reveal key={s.label} delay={0.08 * i}>
               <div data-testid={s.testId} className="border-l border-white/15 pl-6">
-                <div className="font-display text-5xl text-white lg:text-6xl">
+                <div className="font-display flex h-12 items-center text-5xl text-white lg:h-16 lg:text-6xl">
                   {s.symbol ? s.symbol : <CountUp to={s.value ?? 0} suffix={s.suffix ?? ""} />}
                 </div>
                 <p className="mt-3 text-[11px] uppercase tracking-[0.3em] text-slateblue-400">
