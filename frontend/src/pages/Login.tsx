@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from "react";
+import { useState, type FormEvent, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { ArrowLeft, ArrowRight, Lock } from "lucide-react";
@@ -9,10 +9,10 @@ import { PORTAL_URL } from "@/components/Nav";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
-const SHOWCASE_STATS: Array<[string, string]> = [
-  ["71", "Structures"],
-  ["15", "Providers"],
-  ["100%", "Events sealed"],
+const SHOWCASE_STATS: Array<{ value: ReactNode; label: string }> = [
+  { value: "71", label: "Structures" },
+  { value: <img src="/symbol.png" alt="" className="h-7 w-auto lg:h-8" />, label: "LP's Integrated" },
+  { value: "100%", label: "Events sealed" },
 ];
 
 function FloatingDashboard() {
@@ -87,10 +87,10 @@ export default function Login() {
             </div>
 
             <div className="relative z-10 flex items-center gap-8">
-              {SHOWCASE_STATS.map(([v, l]) => (
-                <div key={l} className="border-l border-white/15 pl-4">
-                  <p className="font-display text-2xl text-white">{v}</p>
-                  <p className="mt-1 text-[9px] uppercase tracking-[0.25em] text-slateblue-500">{l}</p>
+              {SHOWCASE_STATS.map(({ value, label }) => (
+                <div key={label} className="border-l border-white/15 pl-4">
+                  <p className="font-display flex h-8 items-center text-2xl text-white">{value}</p>
+                  <p className="mt-1 text-[9px] uppercase tracking-[0.25em] text-slateblue-500">{label}</p>
                 </div>
               ))}
             </div>

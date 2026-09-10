@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform, AnimatePresence } from "motion/react";
 import {
@@ -7,6 +7,7 @@ import {
   Globe, TrendingUp, Users,
 } from "lucide-react";
 import { Reveal, RevealLine, CountUp, ParallaxLayer } from "@/components/motion";
+
 import { MeshCanvas } from "@/components/MeshCanvas";
 import { CandleArt } from "@/components/CandleArt";
 import { HexMark } from "@/components/HexMark";
@@ -51,9 +52,17 @@ const STRUCTURES = [
   { name: "TARF's", desc: "Target accruals variants for enhancement", path: "M4 32 H13 V27 H22 V22 H31 V17 H40 V13 H60", guides: ["M4 10 H60"] },
 ];
 
-const STATS = [
+type Stat = {
+  testId: string;
+  label: string;
+  value?: number;
+  suffix?: string;
+  symbol?: ReactNode;
+};
+
+const STATS: Stat[] = [
   { value: 71, suffix: "", label: "Structures Supported (Built on Demand)", testId: "stat-structures" },
-  { value: 15, suffix: "", label: "Customised Connectivity - Liquidity providers integrated", testId: "stat-providers" },
+  { symbol: <img src="/symbol.png" alt="" className="h-14 w-auto lg:h-20" />, label: "Customised Connectivity - Liquidity providers integrated", testId: "stat-providers" },
   { value: 100, suffix: "%", label: "Audit events hash-chained", testId: "stat-audit" },
   { value: 24, suffix: "/5", label: "Market coverage, globally", testId: "stat-coverage" },
 ];
@@ -293,7 +302,7 @@ export default function Home() {
             <Reveal key={s.label} delay={0.08 * i}>
               <div data-testid={s.testId} className="border-l border-white/15 pl-6">
                 <div className="font-display text-5xl text-white lg:text-6xl">
-                  <CountUp to={s.value} suffix={s.suffix} />
+                  {s.symbol ? s.symbol : <CountUp to={s.value ?? 0} suffix={s.suffix ?? ""} />}
                 </div>
                 <p className="mt-3 text-[11px] uppercase tracking-[0.3em] text-slateblue-400">
                   {s.label}

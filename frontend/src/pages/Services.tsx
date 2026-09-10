@@ -28,7 +28,7 @@ const PILLARS = [
     bullets: [
       "Refinement on every input change",
       "LP premium vs margin toggle",
-      "Trade Dynamics with Sensitivity ladders across spot, vol and time",
+      "Trade Dynamics with sensitivity ladder across spot outcomes",
     ],
     mockup: <SensitivityMock />,
     flip: true,
