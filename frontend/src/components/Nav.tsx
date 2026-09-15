@@ -58,13 +58,13 @@ export default function Nav() {
               {l.label}
             </NavLink>
           ))}
-          <Link
-            to="/login"
+          <a
+            href={PORTAL_URL}
             data-testid="nav-login-button"
             className="rounded-full border border-white/30 px-5 py-2 text-[11px] font-medium uppercase tracking-[0.25em] text-white transition-all duration-300 hover:border-white/70 hover:bg-white/10"
           >
             Login
-          </Link>
+          </a>
         </nav>
 
         <button
@@ -107,15 +107,15 @@ export default function Nav() {
                   </NavLink>
                 </motion.div>
               ))}
-              <Link
-                to="/login"
+              <a
+                href={PORTAL_URL}
                 onClick={() => setOpen(false)}
                 data-testid="nav-mobile-login-button"
                 className="mt-4 flex items-center justify-center gap-2 rounded-full border border-white/30 py-3 text-sm font-medium uppercase tracking-[0.24em] text-white"
               >
                 Login
                 <HexMark className="h-4 w-4" strokeWidth={2} />
-              </Link>
+              </a>
             </div>
           </motion.nav>
         )}
