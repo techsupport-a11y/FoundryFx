@@ -2,7 +2,7 @@ import { useRef, useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform, AnimatePresence } from "motion/react";
 import {
-  ArrowRight, ArrowUpRight, Play, X, Sparkles, LineChart, Layers,
+  ArrowRight, ArrowUpRight, X, Sparkles, LineChart, Layers,
   ShieldCheck, Cloud, Workflow, Gauge, CheckCircle2,
   Globe, TrendingUp, Users,
 } from "lucide-react";
@@ -130,13 +130,6 @@ export default function Home() {
                 <Link to="/services" data-testid="hero-cta-explore" className="btn-primary-light">
                   Explore Foundry <ArrowRight className="h-4 w-4" />
                 </Link>
-                <button
-                  onClick={() => setVideoOpen(true)}
-                  data-testid="hero-cta-video"
-                  className="btn-ghost-dark"
-                >
-                  <Play className="h-3.5 w-3.5 fill-current" /> Watch Video
-                </button>
               </div>
             </Reveal>
           </div>
